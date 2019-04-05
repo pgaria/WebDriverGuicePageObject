@@ -21,6 +21,7 @@ public class GoogleSearchWidget {
 
     public void searchFor(String txt) {
         searchBox.sendKeys(txt);
+
         searchButton.click();
     }
 

@@ -18,7 +18,7 @@ public class DriverModule extends AbstractModule {
     protected void configure() {
 
         bind(DriverManager.class)
-                .to(ChromeDriverManager.class).in(Scopes.SINGLETON);;
+                .to(ChromeDriverManager.class);
         //My test input properties
         try {
             Properties props = new Properties();
@@ -33,6 +33,7 @@ public class DriverModule extends AbstractModule {
     public WebDriver getDriver(DriverManager driverManager) {
         return driverManager.getDriver();
     }
+
     @Provides
     public Actions getActions(WebDriver driver) {
         return new Actions(driver);
